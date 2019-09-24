@@ -1,0 +1,17 @@
+version: '3'
+services:
+        node-server-service:
+                build: ./server
+                volumes:
+                        - ./server:/usr/src/app
+                        - /usr/src/app/node_modules
+                ports:
+                        - 5001:9000
+        react-app-service:
+                build: ./react/reactdocker
+                volumes:
+                        - ./react/reactdocker:/usr/src/app
+                        - /usr/src/app/node_modules
+                ports:
+                        - 5002:3000
+
